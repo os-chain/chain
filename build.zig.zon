@@ -1,0 +1,17 @@
+.{
+    .name = "chain",
+    .version = "0.1.0",
+    .dependencies = .{
+        .ovmf = .{
+            .url = "git+https://github.com/os-chain/ovmf#6b845f8b20d3379061536a2567ad75883aeef2af",
+            .hash = "122030413b1ef4747ce34203a35f3845ebc4b34ce90a8967cdfc98c6f039bbbf76f8",
+        },
+        .limine = .{
+            .url = "git+https://github.com/limine-bootloader/limine?ref=v6.x-branch-binary#b20675341201a1a4bb6be4d56d50e7d13ba81743",
+            .hash = "1220041424e7d68e00b2c8c84a56b0a34b51963383af39a425fa75fd27f553a1be23",
+        },
+    },
+    .paths = .{
+        "",
+    },
+}
