@@ -30,6 +30,7 @@ pub fn build(b: *std.Build) void {
         .name = "chain",
         .target = kernel_target,
         .optimize = optimize,
+        .code_model = .kernel,
         .root_source_file = b.path("kernel/src/main.zig"),
     });
     kernel.setLinkerScript(b.path("kernel/link-x86_64.ld"));
@@ -61,7 +62,7 @@ pub fn build(b: *std.Build) void {
     qemu.addFileArg(b.dependency("ovmf", .{}).path("RELEASEX64_OVMF.fd"));
     qemu.addArg("-cdrom");
     qemu.addFileArg(stub_iso);
-    qemu.addArgs(&.{ "-debugcon", "stdio" });
+    qemu.addArgs(&.{ "-serial", "stdio" });
 
     const qemu_step = b.step("qemu", "Run the stub ISO in QEMU");
     qemu_step.dependOn(&qemu.step);
