@@ -53,7 +53,8 @@ pub fn init(speed: Speed) void {
 
             cpu.outb(0x3F8 + 4, 0x03); // RTS, DTS
         },
-        else => unreachable,
+        .aarch64 => {},
+        else => @compileError("Unsupported arch"),
     }
 }
 
@@ -65,6 +66,9 @@ pub fn putc(char: u8) void {
             while (cpu.inb(0x3F8 + 5) & 0x20 == 0) {}
             cpu.outb(0x3F8, char);
         },
-        else => unreachable,
+        .aarch64 => {
+            @as(*volatile u8, @ptrFromInt(0x9000000)).* = char;
+        },
+        else => @compileError("Unsupported arch"),
     }
 }

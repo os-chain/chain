@@ -3,8 +3,8 @@
     .version = "0.1.0",
     .dependencies = .{
         .ovmf = .{
-            .url = "git+https://github.com/os-chain/ovmf#6b845f8b20d3379061536a2567ad75883aeef2af",
-            .hash = "122030413b1ef4747ce34203a35f3845ebc4b34ce90a8967cdfc98c6f039bbbf76f8",
+            .url = "git+https://github.com/os-chain/ovmf#1a0b1e08a3a8f6c632443ae6c091ca08b535ffda",
+            .hash = "12206883f336b8b137741d1607e682c842204f33b48d5838555c04c6f03b164e4101",
         },
         .limine = .{
             .url = "git+https://github.com/limine-bootloader/limine?ref=v6.x-branch-binary#b20675341201a1a4bb6be4d56d50e7d13ba81743",
