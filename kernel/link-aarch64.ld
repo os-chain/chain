@@ -1,4 +1,4 @@
-TARGET(elf64-x86-64)
+TARGET(elf64-aarch64)
 ENTRY(_start)
 
 PHDRS {
